@@ -74,7 +74,7 @@ export default {
     polygonFields: [],
     infoWindow: null,
     loader: new Loader({
-      apiKey: "AIzaSyBVPs5KQya-tSHXChjTy_EL9yjiE_TcBZw",
+      apiKey: process.env.VUE_APP_GOOGLE_MAPS,
       version: "weekly",
       libraries: ["places"],
     }),
@@ -316,6 +316,7 @@ export default {
     },
   },
   async mounted() {
+    console.log('click',process.env)
     await this.loader
       .load()
       .then(() => {
